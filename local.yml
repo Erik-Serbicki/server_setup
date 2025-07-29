@@ -1,0 +1,14 @@
+- hosts: localhost
+  connection: local
+  become: true
+  
+  tasks:
+  - name: install some default packages
+    tags: gcc,tmux,git,tar
+    apt:
+      name: 
+        - tmux 
+        - gcc 
+        - tar
+        - git
+      state: latest
