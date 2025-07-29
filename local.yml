@@ -7,7 +7,6 @@
       tags: always
       apt: update_cache=yes
       changed_when: False
-      when: ansible-distribution in ["Debian", "Ubuntu"]
 
 - hosts: workstation
   tags: workstation
