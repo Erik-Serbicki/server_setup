@@ -28,7 +28,7 @@
 - name: clone my neovim config
   tags: neovim
   command:
-    cmd: "git clone https://github.com/Erik-Serbicki/neovim-config.git ~/.config/nvim"
+    cmd: "git clone https://github.com/Erik-Serbicki/neovim-config.git /home/spektre/.config/nvim"
 
 - name: install docker
   tags: docker
