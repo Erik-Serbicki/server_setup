@@ -1,0 +1,60 @@
+- name: install some default packages
+  tags: gcc,tmux,git,tar
+  apt:
+    name: 
+      - tmux 
+      - gcc 
+      - tar
+      - git
+    state: latest
+
+- name: copy default tmux config
+  tags: tmux,config
+  copy:
+    src: tmux_configuration.conf
+    dest: /home/erik/.tmux.conf
+    owner: erik
+    group: erik
+    mode: 0644
+
+- name: install latest neovim
+  tags: neovim
+  unarchive:
+    src: https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+    dest: /opt
+    remote_src: yes
+  notify: link_neovim    
+
+- name: clone my neovim config
+  tags: neovim
+  command:
+    cmd: "git clone https://github.com/Erik-Serbicki/neovim-config.git ~/.config/nvim"
+
+- name: install docker
+  tags: docker
+  package:
+    name:
+      - docker.io
+      - docker-compose
+    state: latest
+
+- name: create docker directory
+  tags: docker
+  command:
+    cmd: "mkdir /home/erik/docker"
+
+- name: install zoxide and fzf
+  tags: zoxide,fzf,terminal
+  package:
+    name:
+      - fzf
+      - zoxide
+
+- name: initialize zoxide 
+  tags: terminal,zoxide
+  shell: |
+    echo 'eval "$(zoxide init --cmd cd bash)"' >> /home/erik/.bashrc
+    source /home/erik/.bashrc
+  args:
+    executable: /usr/bin/bash
+
