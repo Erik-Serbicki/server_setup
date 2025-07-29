@@ -1,6 +1,6 @@
-- name: install some default packages
-  tags: gcc,tmux,git,tar
-  apt:
+- name: install gcc, tmux, and tar 
+  tags: gcc,tmux,ubuntu
+  package:
     name: 
       - tmux 
       - gcc 
@@ -12,9 +12,9 @@
   tags: tmux,config
   copy:
     src: tmux_configuration.conf
-    dest: /home/erik/.tmux.conf
-    owner: erik
-    group: erik
+    dest: /home/spektre/.tmux.conf
+    owner: spektre
+    group: spektre
     mode: 0644
 
 - name: install latest neovim
@@ -41,7 +41,7 @@
 - name: create docker directory
   tags: docker
   command:
-    cmd: "mkdir /home/erik/docker"
+    cmd: "mkdir /home/spektre/docker"
 
 - name: install zoxide and fzf
   tags: zoxide,fzf,terminal
@@ -53,8 +53,8 @@
 - name: initialize zoxide 
   tags: terminal,zoxide
   shell: |
-    echo 'eval "$(zoxide init --cmd cd bash)"' >> /home/erik/.bashrc
-    source /home/erik/.bashrc
+    echo 'eval "$(zoxide init --cmd cd bash)"' >> /home/spektre/.bashrc
+    source /home/spektre/.bashrc
   args:
     executable: /usr/bin/bash
 
