@@ -1,0 +1,4 @@
+- name: link_neovim
+  command:
+    cmd: "ln -s /opt/nvim-linux-x86_64/bin/nvim /usr/bin/nvim"
+
