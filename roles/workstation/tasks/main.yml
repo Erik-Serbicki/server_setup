@@ -62,3 +62,8 @@
   tags: eza,terminal
   package:
     name: eza
+
+- name: configure eza
+  tags: eza,terminal
+  shell: |
+    echo 'alias ls="eza -lh --group-directories-first --git"' >> /home/spektre/.bashrc
