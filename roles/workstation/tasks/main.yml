@@ -58,3 +58,7 @@
   args:
     executable: /usr/bin/bash
 
+- name: install eza
+  tags: eza,terminal
+  package:
+    name: eza
