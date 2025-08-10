@@ -67,3 +67,11 @@
   tags: eza,terminal
   shell: |
     echo 'alias ls="eza -lh --group-directories-first --git"' >> /home/spektre/.bashrc
+
+- name: install uv (python)
+  tags: uv,python
+  shell: |
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+  notify:
+    - uv_autocomplete
+    - uv_install_python

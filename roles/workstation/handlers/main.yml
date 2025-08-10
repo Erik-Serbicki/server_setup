@@ -2,3 +2,10 @@
   command:
     cmd: "ln -s /opt/nvim-linux-x86_64/bin/nvim /usr/bin/nvim"
 
+- name: uv_autocomplete
+  shell: |
+    echo 'eval "$(uv generate-shell-completion bash)"' >> /home/spektre/.bashrc
+
+- name: uv_install_pytho
+  shell: |
+    uv python install
