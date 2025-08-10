@@ -28,7 +28,7 @@
 - name: check .config/nvim
   find:
     paths: /home/spektre/.config/nvim
-    file_type: all
+    file_type: any
     hidden: true
   register: nvim_config
 
