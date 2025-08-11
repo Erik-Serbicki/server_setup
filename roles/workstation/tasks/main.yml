@@ -66,10 +66,10 @@
 
 - name: install uv (python)
   tags: uv,python
-  become_user: spektre
   shell: |
     cd /home/spektre
-    sudo curl -LsSf https://astral.sh/uv/install.sh | sh
+    curl -LsSf https://astral.sh/uv/install.sh |env UV_INSTALL_DIR="/usr/local/sbin" sh
+
   notify:
     - uv_autocomplete
     - uv_install_python
