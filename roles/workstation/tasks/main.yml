@@ -45,11 +45,9 @@
       - docker.io
       - docker-compose
     state: latest
+    notify: create_docker_directory
 
-- name: create docker directory
-  tags: docker
-  command:
-    cmd: "mkdir /home/spektre/docker"
+
 
 - name: install zoxide and fzf
   tags: zoxide,fzf,terminal

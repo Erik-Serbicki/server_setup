@@ -2,10 +2,15 @@
   command:
     cmd: "ln -s /opt/nvim-linux-x86_64/bin/nvim /usr/bin/nvim"
 
+- name: create_docker_directory
+  tags: docker
+  command:
+    cmd: "mkdir /home/spektre/docker"
+
 - name: uv_autocomplete
   shell: |
     echo 'eval "$(uv generate-shell-completion bash)"' >> /home/spektre/.bashrc
 
-- name: uv_install_pytho
+- name: uv_install_python
   shell: |
     uv python install
