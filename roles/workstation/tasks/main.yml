@@ -77,7 +77,8 @@
 - name: install uv (python)
   tags: uv,python
   shell: |
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+    curl -LsSf https://astral.sh/uv/install.sh /tmp/uv_install.sh
   notify:
+    - uv_install_script
     - uv_autocomplete
     - uv_install_python
