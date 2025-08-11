@@ -68,7 +68,7 @@
   tags: uv,python
   shell: |
     cd /home/spektre
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+    curl -LsSf https://astral.sh/uv/install.sh -o /tmp/uv_install.sh
   notify:
     - uv_autocomplete
     - uv_install_python
