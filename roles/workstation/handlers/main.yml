@@ -7,6 +7,20 @@
   command:
     cmd: "mkdir /home/spektre/docker"
 
+
+- name: initialize zoxide 
+  tags: terminal,zoxide
+  shell: |
+    echo 'eval "$(zoxide init --cmd cd bash)"' >> /home/spektre/.bashrc
+    source /home/spektre/.bashrc
+  args:
+    executable: /usr/bin/bash
+
+- name: configure eza
+  tags: eza,terminal
+  shell: |
+    echo 'alias ls="eza -lh --group-directories-first --git"' >> /home/spektre/.bashrc
+
 - name: uv_install_script
   shell: |
     bash /tmp/uv_install.sh

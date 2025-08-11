@@ -55,19 +55,13 @@
     name:
       - fzf
       - zoxide
-
-- name: initialize zoxide 
-  tags: terminal,zoxide
-  shell: |
-    echo 'eval "$(zoxide init --cmd cd bash)"' >> /home/spektre/.bashrc
-    source /home/spektre/.bashrc
-  args:
-    executable: /usr/bin/bash
+  notify: initialize zoxide
 
 - name: install eza
   tags: eza,terminal
   package:
     name: eza
+  notify: configure eza
 
 - name: configure eza
   tags: eza,terminal
