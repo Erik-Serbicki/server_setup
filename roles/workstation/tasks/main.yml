@@ -69,7 +69,7 @@
   become_user: spektre
   shell: |
     cd /home/spektre
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+    sudo curl -LsSf https://astral.sh/uv/install.sh | sh
   notify:
     - uv_autocomplete
     - uv_install_python
