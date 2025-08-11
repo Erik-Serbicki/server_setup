@@ -21,10 +21,6 @@
   shell: |
     echo 'alias ls="eza -lh --group-directories-first --git"' >> /home/spektre/.bashrc
 
-- name: uv_install_script
-  shell: |
-    bash /tmp/uv_install.sh
-
 - name: uv_autocomplete
   shell: |
     echo 'eval "$(uv generate-shell-completion bash)"' >> /home/spektre/.bashrc

@@ -70,6 +70,5 @@
     cd /home/spektre
     curl -LsSf https://astral.sh/uv/install.sh | sh
   notify:
-    - uv_install_script
     - uv_autocomplete
     - uv_install_python
