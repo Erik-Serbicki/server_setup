@@ -45,7 +45,7 @@
       - docker.io
       - docker-compose
     state: latest
-    notify: create_docker_directory
+  notify: create_docker_directory
 
 
 
