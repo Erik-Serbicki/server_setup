@@ -63,15 +63,12 @@
     name: eza
   notify: configure eza
 
-- name: configure eza
-  tags: eza,terminal
-  shell: |
-    echo 'alias ls="eza -lh --group-directories-first --git"' >> /home/spektre/.bashrc
 
 - name: install uv (python)
   tags: uv,python
   shell: |
-    curl -LsSf https://astral.sh/uv/install.sh /tmp/uv_install.sh
+    cd /home/spektre
+    curl -LsSf https://astral.sh/uv/install.sh | sh
   notify:
     - uv_install_script
     - uv_autocomplete
