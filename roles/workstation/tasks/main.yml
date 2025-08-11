@@ -27,7 +27,7 @@
 
 - name: check .config/nvim
   find:
-    paths: /home/spektre/.config/nvim
+    paths: '/home/spektre/.config/nvim'
     file_type: any
     hidden: true
   register: nvim_config
@@ -36,7 +36,7 @@
   tags: neovim
   command:
     cmd: "git clone https://github.com/Erik-Serbicki/neovim-config.git /home/spektre/.config/nvim"
-  when: nvim_config.files | length > 0
+  when: nvim_config.matched == 0
 
 - name: install docker
   tags: docker
