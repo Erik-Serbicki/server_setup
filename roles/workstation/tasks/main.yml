@@ -43,11 +43,9 @@
   package:
     name:
       - docker.io
-      - docker-compose
+      - docker-compose-v2
     state: latest
   notify: create_docker_directory
-
-
 
 - name: install zoxide and fzf
   tags: zoxide,fzf,terminal
